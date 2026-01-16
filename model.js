@@ -33,7 +33,7 @@ controls.enableDamping = true;
 // Load Model
 const loader = new THREE.GLTFLoader();
 loader.load(
-    "models/lens_system.glb",
+    "models/Linear_Gantry_No_Animation.glb",
     (gltf) => {
         const model = gltf.scene;
         scene.add(model);
@@ -59,3 +59,4 @@ function animate() {
 }
 
 animate();
+
