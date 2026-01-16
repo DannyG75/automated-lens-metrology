@@ -48,18 +48,31 @@ controls.minDistance = 1.5;
 controls.maxDistance = 6;
 
 // Load 3D model
-const loader = new GLTFLoader();
 loader.load(
   "./models/Linear_Gantry_No_Animation.glb",
   (gltf) => {
     const model = gltf.scene;
-    model.scale.set(1, 1, 1);
+
+    model.scale.set(0.01, 0.01, 0.01); // VERY IMPORTANT for CAD models
+    model.position.set(0, 0, 0);
+
     scene.add(model);
+
+    // Auto-frame camera
+    const box = new THREE.Box3().setFromObject(model);
+    const center = box.getCenter(new THREE.Vector3());
+    const size = box.getSize(new THREE.Vector3());
+
+    controls.target.copy(center);
+    camera.position.set(
+      center.x,
+      center.y + size.y * 0.8,
+      center.z + size.length()
+    );
+    controls.update();
   },
   undefined,
-  (error) => {
-    console.error("Error loading model:", error);
-  }
+  (error) => console.error(error)
 );
 
 // Resize handling
@@ -80,3 +93,4 @@ function animate() {
 }
 
 animate();
+
