@@ -49,7 +49,7 @@ controls.maxDistance = 6;
 
 // Load 3D model
 loader.load(
-  "./models/Linear_Gantry_No_Animation.glb",
+  "./models/Linear_Gantry_Animation.glb",
   (gltf) => {
     const model = gltf.scene;
 
@@ -93,4 +93,5 @@ function animate() {
 }
 
 animate();
+
 
