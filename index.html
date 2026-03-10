@@ -408,11 +408,25 @@
       overflow: hidden;
       position: relative;
     }
-    .team-avatar-bg {
-      position: absolute; inset: 0;
-      opacity: 0.3;
+    /* Photo variant */
+    .team-avatar--photo {
+      padding: 0;
     }
-    .team-avatar span { position: relative; z-index: 1; }
+    .team-avatar--photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+    .team-avatar-fallback {
+      position: absolute; inset: 0;
+      border-radius: 50%;
+      display: none;
+      align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+    }
+    .team-avatar-fallback span { position: relative; z-index: 1; }
     .team-name {
       font-weight: 500;
       font-size: 0.95rem;
@@ -760,46 +774,25 @@
     <h2>Project <em>Documents</em></h2>
     <div class="docs-grid">
       <div class="doc-card">
+        <div class="doc-icon">📐</div>
+        <span class="doc-type">Planning</span>
+        <div class="doc-title">Divide &amp; Conquer – Revision</div>
+        <div class="doc-desc">Initial workload breakdown, team responsibilities, and revised project planning document.</div>
+        <a href="Divide_&amp;_Conquer.pdf" target="_blank" class="doc-link rainbow-link">View Document →</a>
+      </div>
+      <div class="doc-card">
         <div class="doc-icon">📋</div>
         <span class="doc-type">Report</span>
-        <div class="doc-title">Project Proposal</div>
-        <div class="doc-desc">Initial system concept, objectives, feasibility analysis, and project scope definition.</div>
-        <a href="#" class="doc-link rainbow-link">View Document →</a>
-      </div>
-      <div class="doc-card">
-        <div class="doc-icon">🔧</div>
-        <span class="doc-type">Specification</span>
-        <div class="doc-title">System Requirements</div>
-        <div class="doc-desc">Functional and non-functional requirements, performance targets, and acceptance criteria.</div>
-        <a href="#" class="doc-link rainbow-link">View Document →</a>
-      </div>
-      <div class="doc-card">
-        <div class="doc-icon">🏗️</div>
-        <span class="doc-type">Design</span>
-        <div class="doc-title">Hardware Architecture</div>
-        <div class="doc-desc">Mechanical design, sensor integration schematics, and CAD assembly documentation.</div>
-        <a href="#" class="doc-link rainbow-link">View Document →</a>
-      </div>
-      <div class="doc-card">
-        <div class="doc-icon">💻</div>
-        <span class="doc-type">Design</span>
-        <div class="doc-title">Software Design Document</div>
-        <div class="doc-desc">Data acquisition pipeline, processing algorithms, and datasheet generation logic.</div>
-        <a href="#" class="doc-link rainbow-link">View Document →</a>
-      </div>
-      <div class="doc-card">
-        <div class="doc-icon">🧪</div>
-        <span class="doc-type">Testing</span>
-        <div class="doc-title">Verification & Validation</div>
-        <div class="doc-desc">Test plans, calibration procedures, and measurement accuracy benchmarks.</div>
-        <a href="#" class="doc-link rainbow-link">View Document →</a>
+        <div class="doc-title">Midterm Report</div>
+        <div class="doc-desc">Progress summary at the midpoint of the project — system design, sensor selection, and preliminary results.</div>
+        <a href="Midterm_Report.pdf" target="_blank" class="doc-link rainbow-link">View Document →</a>
       </div>
       <div class="doc-card">
         <div class="doc-icon">📊</div>
         <span class="doc-type">Final Report</span>
-        <div class="doc-title">Capstone Final Report</div>
-        <div class="doc-desc">Complete project documentation, results, analysis, and conclusions.</div>
-        <a href="#" class="doc-link rainbow-link">View Document →</a>
+        <div class="doc-title">Final Report</div>
+        <div class="doc-desc">Complete project documentation covering full system implementation, validation, results, and conclusions.</div>
+        <a href="Final_Report.pdf" target="_blank" class="doc-link rainbow-link">View Document →</a>
       </div>
     </div>
   </div>
@@ -811,49 +804,40 @@
   <h2>Meet the <em>Engineers</em></h2>
   <div class="team-grid">
     <div class="team-card">
-      <div class="team-avatar">
-        <div class="team-avatar-bg" style="background:radial-gradient(circle, var(--r1), transparent)"></div>
-        <span>A</span>
+      <div class="team-avatar team-avatar--photo">
+        <img src="images/Kiva.png" alt="Kiva McCracken" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="team-avatar-fallback" style="background:radial-gradient(circle, var(--r1), transparent)"><span>K</span></div>
       </div>
-      <div class="team-name">Team Member A</div>
-      <div class="team-role">Systems Lead</div>
-      <div class="team-focus">System integration, sensor architecture design, and project coordination.</div>
+      <div class="team-name">Kiva McCracken</div>
+      <div class="team-role">CREOL Senior Design</div>
+      <div class="team-focus">University of Central Florida</div>
     </div>
     <div class="team-card">
-      <div class="team-avatar">
-        <div class="team-avatar-bg" style="background:radial-gradient(circle, var(--r3), transparent)"></div>
-        <span>B</span>
+      <div class="team-avatar team-avatar--photo">
+        <img src="images/ollie.jpg" alt="Ollie Mueller" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="team-avatar-fallback" style="background:radial-gradient(circle, var(--r3), transparent)"><span>O</span></div>
       </div>
-      <div class="team-name">Team Member B</div>
-      <div class="team-role">Optical Engineer</div>
-      <div class="team-focus">Interferometric measurement, EFL characterization, and spectral analysis.</div>
+      <div class="team-name">Ollie Mueller</div>
+      <div class="team-role">CREOL Senior Design</div>
+      <div class="team-focus">University of Central Florida</div>
     </div>
     <div class="team-card">
-      <div class="team-avatar">
-        <div class="team-avatar-bg" style="background:radial-gradient(circle, var(--r4), transparent)"></div>
-        <span>C</span>
+      <div class="team-avatar team-avatar--photo">
+        <img src="images/zachary.jpg" alt="Zachary Kassner" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="team-avatar-fallback" style="background:radial-gradient(circle, var(--r4), transparent)"><span>Z</span></div>
       </div>
-      <div class="team-name">Team Member C</div>
-      <div class="team-role">Mechanical Engineer</div>
-      <div class="team-focus">Precision fixturing, CAD modeling, and sensor mounting mechanisms.</div>
+      <div class="team-name">Zachary Kassner</div>
+      <div class="team-role">CREOL Senior Design</div>
+      <div class="team-focus">University of Central Florida</div>
     </div>
     <div class="team-card">
-      <div class="team-avatar">
-        <div class="team-avatar-bg" style="background:radial-gradient(circle, var(--r5), transparent)"></div>
-        <span>D</span>
+      <div class="team-avatar team-avatar--photo">
+        <img src="images/daniel.jpg" alt="Daniel Gomez" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="team-avatar-fallback" style="background:radial-gradient(circle, var(--r5), transparent)"><span>D</span></div>
       </div>
-      <div class="team-name">Team Member D</div>
-      <div class="team-role">Software Engineer</div>
-      <div class="team-focus">Data acquisition pipeline, signal processing, and automated datasheet output.</div>
-    </div>
-    <div class="team-card">
-      <div class="team-avatar">
-        <div class="team-avatar-bg" style="background:radial-gradient(circle, var(--r6), transparent)"></div>
-        <span>E</span>
-      </div>
-      <div class="team-name">Team Member E</div>
-      <div class="team-role">Electrical Engineer</div>
-      <div class="team-focus">Sensor electronics, DAQ hardware, and embedded firmware development.</div>
+      <div class="team-name">Daniel Gomez</div>
+      <div class="team-role">CREOL Senior Design</div>
+      <div class="team-focus">University of Central Florida</div>
     </div>
   </div>
 </section>
@@ -865,22 +849,15 @@
   <div class="inner">
     <p class="section-label">04 — System Demo</p>
     <h2>See It <em>In Action</em></h2>
-    <div class="video-shell" id="videoShell" onclick="loadVideo()">
-      <div class="video-scan"></div>
-      <div class="video-placeholder" id="videoPlaceholder">
-        <div class="play-btn">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-        </div>
-        <span class="video-caption">Play Demo Video</span>
-      </div>
-      <iframe id="demoIframe" allowfullscreen></iframe>
+    <div class="video-shell" style="cursor:default;">
+      <iframe
+        src="https://www.youtube.com/embed/7KuSX2ewJQw"
+        title="ALM System Demo Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="width:100%;height:100%;border:none;display:block;">
+      </iframe>
     </div>
-    <p style="margin-top:1.2rem;font-size:0.8rem;color:#555;font-family:'Space Mono',monospace;">
-      <!-- Replace VIDEO_ID below with your YouTube video ID once available -->
-      Replace <code style="color:var(--r4)">VIDEO_ID</code> in the source with your YouTube video ID to enable playback.
-    </p>
   </div>
 </div>
 
@@ -940,12 +917,12 @@
           </div>
           <div class="model-info-row">
             <span class="model-info-key">FILE</span>
-            <span class="model-info-val" id="model-filename">gantry.glb</span>
+            <span class="model-info-val" id="model-filename">Linear_Gantry_Animation.glb</span>
           </div>
         </div>
       </div>
       <p style="font-family:'Space Mono',monospace;font-size:0.6rem;color:#444;line-height:1.8;">
-        Place your <span style="color:var(--r4)">gantry.glb</span> file in the same folder as <code style="color:var(--mid)">index.html</code> and update the filename in the script below.
+        Place <span style="color:var(--r4)">Linear_Gantry_Animation.glb</span> inside a <code style="color:var(--mid)">models/</code> folder next to <code style="color:var(--mid)">index.html</code>.
       </p>
     </div>
   </div>
@@ -954,29 +931,16 @@
 <!-- FOOTER -->
 <div class="footer-rainbow"></div>
 <footer>
-  <span>Automated Lens Metrology System — Capstone Engineering Project</span>
-  <span>Built with precision · Measured with purpose</span>
+  <span>Automated Lens Parameter Metrology — CREOL Senior Design Project</span>
+  <span>University of Central Florida</span>
 </footer>
 
 <script>
-// ── VIDEO ──────────────────────────────────────────────────────────
-const VIDEO_ID = 'YOUR_YOUTUBE_VIDEO_ID'; // <-- Replace this
-
-function loadVideo() {
-  if (VIDEO_ID === 'YOUR_YOUTUBE_VIDEO_ID') {
-    alert('Replace VIDEO_ID in the source code with your YouTube video ID.');
-    return;
-  }
-  const iframe = document.getElementById('demoIframe');
-  const placeholder = document.getElementById('videoPlaceholder');
-  iframe.src = `https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1`;
-  iframe.style.display = 'block';
-  placeholder.classList.add('hidden');
-}
+// ── VIDEO — embedded directly, no JS needed ────────────────────────
 
 // ── THREE.JS — GLB LOADER ──────────────────────────────────────────
 // ↓↓↓ SET YOUR FILENAME HERE — must be in the same folder as index.html ↓↓↓
-const GLB_FILENAME = 'Linear Gantry Animation.glb';
+const GLB_FILENAME = 'models/Linear_Gantry_Animation.glb';
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 document.getElementById('model-filename').textContent = GLB_FILENAME;
@@ -1309,7 +1273,7 @@ function animate(now) {
       syncSpherical();
     }
   }
- //
+
   // Auto rotate
   if (autoRotate && !isDragging && !animatingCam) {
     spherical.theta += 0.004;
