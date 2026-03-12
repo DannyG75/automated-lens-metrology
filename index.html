@@ -94,6 +94,12 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--white); }
+    .nav-datasheets {
+      color: var(--r4) !important;
+      border: 1px solid rgba(61,220,132,0.25);
+      padding: 0.25rem 0.7rem;
+    }
+    .nav-datasheets:hover { border-color: var(--r4); }
 
     /* ── HERO ─────────────────────────────────────────── */
     #hero {
@@ -654,6 +660,7 @@
     <li><a href="#team" class="rainbow-link">Team</a></li>
     <li><a href="#demo" class="rainbow-link">Demo</a></li>
     <li><a href="#model-section" class="rainbow-link">3D Model</a></li>
+    <li><a href="datasheets.html" class="rainbow-link nav-datasheets">Datasheets</a></li>
   </ul>
 </nav>
 
@@ -917,12 +924,12 @@
           </div>
           <div class="model-info-row">
             <span class="model-info-key">FILE</span>
-            <span class="model-info-val" id="model-filename">Linear_Gantry_Animation.glb</span>
+            <span class="model-info-val" id="model-filename">Linear_Gantry_No_Animation.glb</span>
           </div>
         </div>
       </div>
       <p style="font-family:'Space Mono',monospace;font-size:0.6rem;color:#444;line-height:1.8;">
-        Place <span style="color:var(--r4)">Linear_Gantry_Animation.glb</span> inside a <code style="color:var(--mid)">models/</code> folder next to <code style="color:var(--mid)">index.html</code>.
+        Place <span style="color:var(--r4)">Linear_Gantry_No_Animation.glb</span> inside a <code style="color:var(--mid)">models/</code> folder next to <code style="color:var(--mid)">index.html</code>.
       </p>
     </div>
   </div>
@@ -940,7 +947,7 @@
 
 // ── THREE.JS — GLB LOADER ──────────────────────────────────────────
 // ↓↓↓ SET YOUR FILENAME HERE — must be in the same folder as index.html ↓↓↓
-const GLB_FILENAME = 'models/Linear_Gantry_Animation.glb';
+const GLB_FILENAME = 'models/Linear_Gantry_No_Animation.glb';
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 document.getElementById('model-filename').textContent = GLB_FILENAME;
